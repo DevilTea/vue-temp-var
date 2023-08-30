@@ -15,14 +15,14 @@
     "vue3"
   ],
   "version": "0.0.1",
+  "types": "./dist/types/index.d.ts",
   "main": "./dist/vue-temp-var.js",
   "module": "./dist/vue-temp-var.mjs",
-  "types": "./dist/types/index.d.ts",
   "exports": {
     ".": {
+      "types": "./dist/types/index.d.ts",
       "require": "./dist/vue-temp-var.js",
-      "import": "./dist/vue-temp-var.mjs",
-      "types": "./dist/types/index.d.ts"
+      "import": "./dist/vue-temp-var.mjs"
     }
   },
   "files": [
