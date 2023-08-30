@@ -1,5 +1,19 @@
 {
   "name": "vue-temp-var",
+  "description": "A Vue component for defining temporary variables in the template with type inference.",
+  "author": {
+    "name": "DevilTea",
+    "email": "ch19980814@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DevilTea/vue-temp-var.git"
+  },
+  "license": "MIT",
+  "keywords": [
+    "vue",
+    "vue3"
+  ],
   "version": "0.0.1",
   "main": "./dist/vue-temp-var.js",
   "module": "./dist/vue-temp-var.mjs",
