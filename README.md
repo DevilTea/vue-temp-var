@@ -46,6 +46,8 @@ import TempVar from 'vue-temp-var'
 
 ```vue
 <script setup lang="ts">
+import TempVar from 'vue-temp-var'
+
 function getRandomNumber() {
   return Math.random()
 }
@@ -53,12 +55,16 @@ function getRandomNumber() {
 
 <template>
   <div v-for="i in 10" :key="`random-${i}`">
-    <TempVar :define="{ randomNum: getRandomNumber() }">
-      <template #defined="{ randomNum }">
-        <span>"{{ randomNum }}"</span>
-        <span v-if="randomNum > 0.5"> is larger than 0.5</span>
-        <span v-else> is smaller than 0.5</span>
-      </template>
+    <!-- cause the return value would be random, we should store it somewhere. -->
+    <!-- bind a prop 'define' to 'TempVar'. Because it is a prop, it would still be reactive. -->    
+    <!-- destruct from slot: defined, the type would be kept -->
+    <TempVar 
+      :define="{ randomNum: getRandomNumber() }"
+      #defined="{ randomNum }"
+    >
+      <span>"{{ randomNum }}"</span>
+      <span v-if="randomNum > 0.5"> is larger than 0.5</span>
+      <span v-else> is smaller than 0.5</span>
     </TempVar>
   </div>
 </template>
