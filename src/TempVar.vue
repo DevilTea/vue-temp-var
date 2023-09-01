@@ -1,4 +1,9 @@
-<script setup lang="ts" generic="T extends { [idx: string]: { [idx: string]: object | U; } | U; }, U extends string | number | bigint | boolean | symbol | null | undefined">
+<script setup lang="ts" generic="T extends ToInfer<P>, P extends Primitive">
+export type Primitive = string | number | bigint | boolean | symbol | null | undefined
+export interface ToInfer<P extends Primitive> {
+  [idx: string]: P | ToInfer<P>
+}
+
 defineProps<{
   define: T
 }>()
