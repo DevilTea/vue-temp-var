@@ -1,13 +1,10 @@
 import type { Plugin } from 'vue'
 import _TempVar from './TempVar.vue'
 
-// @ts-expect-error
-const TempVar: typeof _TempVar & Plugin = _TempVar
+const TempVar = _TempVar as typeof _TempVar & Plugin
 TempVar.install = (app) => {
-  // @ts-expect-error
-  app.component('temp-var', _TempVar)
-  // @ts-expect-error
-  app.component('TempVar', _TempVar)
+  app.component('TempVar', _TempVar as any)
+  app.component('TempVar', _TempVar as any)
 }
 
 export default TempVar
