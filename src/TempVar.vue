@@ -1,18 +1,25 @@
-<script setup lang="ts" generic="T extends ToInfer<P>, P extends Primitive">
-export type Primitive = string | number | bigint | boolean | symbol | null | undefined
-export interface ToInfer<P extends Primitive> {
-  [idx: string]: P | ToInfer<P>
-}
+<script setup lang="ts" generic="T">
+import { onMounted, ref } from 'vue'
 
 defineProps<{
-  define: T
+	define: T
 }>()
 
 defineSlots<{
-  defined(_: T): any
+	default(_: T): any
 }>()
+
+const isMounted = ref(false)
+onMounted(() => {
+	isMounted.value = true
+})
 </script>
 
 <template>
-  <slot name="defined" v-bind="define" />
+	<slot
+		v-if="isMounted"
+		v-bind="
+			define as T
+		"
+	/>
 </template>

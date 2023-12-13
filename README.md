@@ -26,9 +26,9 @@ app.use(TempVar)
 
 // src/components.d.ts
 declare module 'vue' {
-  export interface GlobalComponents {
-    TempVar: typeof import('vue-temp-var').default
-  }
+	export interface GlobalComponents {
+		TempVar: typeof import('vue-temp-var').default
+	}
 }
 
 export {}
@@ -51,24 +51,27 @@ import TempVar from 'vue-temp-var'
 import TempVar from 'vue-temp-var'
 
 function getRandomNumber() {
-  return Math.random()
+	return Math.random()
 }
 </script>
 
 <template>
-  <div v-for="i in 10" :key="`random-${i}`">
-    <!-- cause the return value would be random, we should store it somewhere. -->
-    <!-- bind a prop 'define' to 'TempVar'. Because it is a prop, it would still be reactive. -->    
-    <!-- destruct from slot: defined, the type would be kept -->
-    <TempVar 
-      :define="{ randomNum: getRandomNumber() }"
-      #defined="{ randomNum }"
-    >
-      <span>"{{ randomNum }}"</span>
-      <span v-if="randomNum > 0.5"> is larger than 0.5</span>
-      <span v-else> is smaller than 0.5</span>
-    </TempVar>
-  </div>
+	<div
+		v-for="i in 10"
+		:key="`random-${i}`"
+	>
+		<!-- cause the return value would be random, we should store it somewhere. -->
+		<!-- bind a prop 'define' to 'TempVar'. Because it is a prop, it would still be reactive. -->
+		<!-- destruct from slot: defined, the type would be kept -->
+		<TempVar
+			v-slot="{ randomNum }"
+			:define="{ randomNum: getRandomNumber() }"
+		>
+			<span>"{{ randomNum }}"</span>
+			<span v-if="randomNum > 0.5"> is larger than 0.5</span>
+			<span v-else> is smaller than 0.5</span>
+		</TempVar>
+	</div>
 </template>
 ```
 
