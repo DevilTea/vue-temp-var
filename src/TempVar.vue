@@ -1,25 +1,7 @@
-<script setup lang="ts" generic="T">
-import { onMounted, ref } from 'vue'
-
-defineProps<{
-	define: T
-}>()
-
-defineSlots<{
-	default(_: T): any
-}>()
-
-const isMounted = ref(false)
-onMounted(() => {
-	isMounted.value = true
-})
+<script setup lang="ts" generic="T extends Record<any, any>">
+defineProps<{ define: T }>()
 </script>
 
 <template>
-	<slot
-		v-if="isMounted"
-		v-bind="
-			define as T
-		"
-	/>
+	<slot v-bind="(define as T)" />
 </template>
