@@ -49,17 +49,17 @@
 		"vue": ">=3.3.0"
 	},
 	"devDependencies": {
-		"@deviltea/eslint-config": "3.0.0",
-		"@deviltea/tsconfig": "0.0.5",
+		"@deviltea/eslint-config": "3.4.1",
+		"@deviltea/tsconfig": "0.0.6",
 		"@types/node": "^20.10.1",
-		"@vitejs/plugin-vue": "4.5.2",
-		"bumpp": "^9.2.1",
-		"eslint": "8.55.0",
-		"npm-run-all2": "6.1.1",
-		"typescript": "5.3.3",
-		"vite": "5.0.8",
-		"vite-plugin-dts": "3.6.4",
-		"vue": "3.3.11",
-		"vue-tsc": "1.8.25"
+		"@vitejs/plugin-vue": "5.0.5",
+		"bumpp": "9.4.1",
+		"eslint": "8.57.0",
+		"npm-run-all2": "6.2.2",
+		"typescript": "5.4.5",
+		"vite": "5.3.4",
+		"vite-plugin-dts": "3.9.1",
+		"vue": "3.4.33",
+		"vue-tsc": "2.0.26"
 	}
 }
