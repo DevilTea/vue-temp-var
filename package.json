@@ -11,7 +11,7 @@
 	"license": "MIT",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/DevilTea/vue-temp-var.git"
+		"url": "git+https://github.com/DevilTea/vue-temp-var.git"
 	},
 	"keywords": [
 		"vue",
@@ -53,8 +53,8 @@
 		"vue": ">=3.3.0"
 	},
 	"devDependencies": {
-		"@deviltea/eslint-config": "7.0.0",
-		"@deviltea/tsconfig": "0.0.9",
+		"@deviltea/eslint-config": "8.0.2",
+		"@deviltea/tsconfig": "0.0.10",
 		"@types/node": "^24.13.2",
 		"@vitejs/plugin-vue": "6.0.7",
 		"bumpp": "11.1.0",
