@@ -2,6 +2,7 @@
 	"name": "vue-temp-var",
 	"type": "module",
 	"version": "2.0.1",
+	"packageManager": "pnpm@10.34.4",
 	"description": "A Vue component for defining temporary variables in the template with type inference.",
 	"author": {
 		"name": "DevilTea",
@@ -19,21 +20,24 @@
 	"exports": {
 		".": {
 			"import": {
-				"types": "./dist/types/index.d.ts",
+				"types": "./dist/index.d.ts",
 				"default": "./dist/vue-temp-var.js"
 			},
 			"require": {
-				"types": "./dist/types/index.d.cts",
+				"types": "./dist/index.d.cts",
 				"default": "./dist/vue-temp-var.cjs"
 			}
 		}
 	},
 	"main": "./dist/vue-temp-var.cjs",
 	"module": "./dist/vue-temp-var.js",
-	"types": "./dist/types/index.d.ts",
+	"types": "./dist/index.d.ts",
 	"files": [
 		"dist"
 	],
+	"engines": {
+		"node": ">=24"
+	},
 	"scripts": {
 		"dev": "vite build --watch",
 		"build": "run-p type-check build-only",
@@ -49,17 +53,17 @@
 		"vue": ">=3.3.0"
 	},
 	"devDependencies": {
-		"@deviltea/eslint-config": "3.4.1",
-		"@deviltea/tsconfig": "0.0.6",
-		"@types/node": "^20.10.1",
-		"@vitejs/plugin-vue": "5.0.5",
-		"bumpp": "9.4.1",
-		"eslint": "8.57.0",
-		"npm-run-all2": "6.2.2",
-		"typescript": "5.4.5",
-		"vite": "5.3.4",
-		"vite-plugin-dts": "3.9.1",
-		"vue": "3.4.33",
-		"vue-tsc": "2.0.26"
+		"@deviltea/eslint-config": "7.0.0",
+		"@deviltea/tsconfig": "0.0.9",
+		"@types/node": "^24.13.2",
+		"@vitejs/plugin-vue": "6.0.7",
+		"bumpp": "11.1.0",
+		"eslint": "10.6.0",
+		"npm-run-all2": "9.0.2",
+		"typescript": "5.9.3",
+		"vite": "7.3.6",
+		"vite-plugin-dts": "5.0.3",
+		"vue": "3.5.39",
+		"vue-tsc": "3.3.6"
 	}
 }
