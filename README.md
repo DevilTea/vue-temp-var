@@ -1,47 +1,11 @@
-# vue-temp-var
+# Moved to DevilTea Labs
 
-A Vue component for defining temporary variables in the template with type inference.
+This project is now maintained in the DevilTea Labs monorepo:
 
-> Checkout the discussion of https://github.com/vuejs/rfcs/discussions/505
+- Source: https://github.com/DevilTea/deviltea-labs/tree/main/packages/vue-temp-var
+- Issues: https://github.com/DevilTea/deviltea-labs/issues
+- npm package: vue-temp-var
 
-> Vue 3.3.0+ is required.
+The npm package name remains unchanged. This repository is preserved for historical commits, releases, issues, pull requests, forks, and stars, and is no longer maintained.
 
-## Install
-
-```bash
-npm install vue-temp-var
-```
-
-## Usage
-```vue
-<script setup lang="ts">
-import TempVar from 'vue-temp-var'
-
-function getRandomNumber() {
-	return Math.random()
-}
-</script>
-
-<template>
-	<div
-		v-for="i in 10"
-		:key="`random-${i}`"
-	>
-		<!-- cause the return value would be random, we should store it somewhere. -->
-		<!-- bind a prop 'define' to 'TempVar'. Because it is a prop, it would still be reactive. -->
-		<!-- destruct from slot: defined, the type would be kept -->
-		<TempVar
-			v-slot="{ randomNum }"
-			:define="{ randomNum: getRandomNumber() }"
-		>
-			<span>"{{ randomNum }}"</span>
-			<span v-if="randomNum > 0.5"> is larger than 0.5</span>
-			<span v-else> is smaller than 0.5</span>
-		</TempVar>
-	</div>
-</template>
-```
-
-## License
-
-[MIT](./LICENSE)
+> Do not open new issues or pull requests in this repository.
